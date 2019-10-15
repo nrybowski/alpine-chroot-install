@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: bionic
 language: minimal
 env:
   matrix:
@@ -7,6 +7,8 @@ env:
     - ARCH=armhf
     - ARCH=aarch64
     - ARCH=ppc64le
+before_install:
+  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
 install:
   - sudo ./alpine-chroot-install
 script:
